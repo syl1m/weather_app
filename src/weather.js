@@ -1,5 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable camelcase */
+import { format, parse } from "date-fns";
+
 function getCurrentData(data) {
   const {
     current: {
@@ -14,8 +16,13 @@ function getCurrentData(data) {
       wind_mph,
     },
   } = data;
+  const last_updated_date = parse(last_updated, "yyyy-MM-dd HH:mm", new Date());
+  const last_updated_date_formatted = format(
+    last_updated_date,
+    "EEE MMM d, yyyy h:mm aa"
+  );
   return {
-    last_updated,
+    last_updated_date_formatted,
     condition,
     temp_f,
     temp_c,

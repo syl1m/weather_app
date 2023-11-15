@@ -24,7 +24,7 @@ function createCurrentDataUI(data) {
 
   condition.textContent = `${data.currentData.condition.text}`;
   location.textContent = `${data.locationData.name}, ${data.locationData.region}, ${data.locationData.country}`;
-  lastUpdated.textContent = `${data.currentData.last_updated}`;
+  lastUpdated.textContent = `${data.currentData.last_updated_date_formatted}`;
   currentTemp.textContent = `${data.currentData.temp_c} degrees C`;
   conditionIcon.textContent = `${data.currentData.condition.icon}`;
 
