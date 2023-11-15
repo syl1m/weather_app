@@ -10,6 +10,8 @@ function getCurrentData(data) {
       feelslike_f,
       feelslike_c,
       humidity,
+      wind_kph,
+      wind_mph,
     },
   } = data;
   return {
@@ -20,6 +22,8 @@ function getCurrentData(data) {
     feelslike_f,
     feelslike_c,
     humidity,
+    wind_kph,
+    wind_mph,
   };
 }
 

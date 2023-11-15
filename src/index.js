@@ -4,7 +4,7 @@ import displayData from "./displayData";
 
 (async () => {
   const weather = await getWeatherData("Seattle");
-  displayData(weather.currentData);
+  displayData(weather);
   console.log(weather);
 })();
 
@@ -18,5 +18,6 @@ searchBtn.addEventListener("click", async (e) => {
     return;
   }
   const weather = await getWeatherData(searchInputValue);
-  console.log(weather);
+  // add error logic when weather contains no data
+  displayData(weather);
 });
