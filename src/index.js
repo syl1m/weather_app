@@ -6,6 +6,7 @@ import displayData from "./displayData";
   const weather = await getWeatherData("Seattle");
   displayData(weather);
   console.log(weather);
+  console.log(weather.dailyForecastData[0].weekday);
 })();
 
 const searchBtn = document.getElementById("searchBtn");

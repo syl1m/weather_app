@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-plusplus */
 /* eslint-disable camelcase */
 import { format, parse } from "date-fns";
@@ -47,7 +48,7 @@ function getLocationData(data) {
 }
 
 function getDailyForecast(data) {
-  const forecastData = {};
+  const forecastData = [];
   const {
     forecast: { forecastday },
   } = data;
@@ -71,7 +72,12 @@ function getDailyForecast(data) {
         },
       },
     } = forecastday;
+
+    // Reformat date to weekday name
+    const weekday = format(parse(date, "yyyy-MM-dd", new Date()), "EEEE");
+
     const forecastDayData = {
+      weekday,
       avgtemp_c,
       avgtemp_f,
       condition,
@@ -82,7 +88,8 @@ function getDailyForecast(data) {
       mintemp_c,
       mintemp_f,
     };
-    forecastData[date] = forecastDayData;
+
+    forecastData.push(forecastDayData);
   }
   return forecastData;
 }
