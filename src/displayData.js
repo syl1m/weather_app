@@ -70,7 +70,7 @@ function createCurrentDataUI(data) {
 }
 
 function createForecastDataUI(data) {
-  const forecast = document.querySelector(".forecast");
+  const forecast = document.querySelector(".forecastDiv");
   forecast.textContent = "";
 
   for (let i = 0; i < data.dailyForecastData.length; i++) {
