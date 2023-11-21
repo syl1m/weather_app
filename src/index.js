@@ -1,11 +1,21 @@
 import "./style.css";
 import getWeatherData from "./weather";
 import displayData from "./displayData";
+import createUnitsToggle from "./unitsToggle";
+import "./unitsToggle.css";
 
+// Add units toggle
+(function createUnitsToggleInDOM() {
+  const toggleWrapper = createUnitsToggle();
+  const locationSearchDiv = document.querySelector(".location-search");
+
+  locationSearchDiv.appendChild(toggleWrapper);
+})();
+
+// Set initial location to Seattle for weather data
 (async () => {
   const weather = await getWeatherData("Seattle");
   displayData(weather);
-  console.log(weather);
 })();
 
 const searchBtn = document.getElementById("searchBtn");
