@@ -78,6 +78,7 @@ function createForecastDataUI(data) {
     const weekDay = document.createElement("div");
     const conditionIcon = document.createElement("img");
     const condition = document.createElement("div");
+    const tempsDiv = document.createElement("div");
     const minTempC = document.createElement("div");
     const minTempF = document.createElement("div");
     const maxTempC = document.createElement("div");
@@ -91,18 +92,30 @@ function createForecastDataUI(data) {
     maxTempC.textContent = `${data.dailyForecastData[i].maxtemp_c} °C`;
     maxTempF.textContent = `${data.dailyForecastData[i].maxtemp_f} °F`;
 
+    dayDiv.classList.add("forecast_day_div");
+    weekDay.classList.add("weekday");
+    conditionIcon.classList.add("forecast_condition_icon");
+    condition.classList.add("forecast_condition");
+    tempsDiv.classList.add("temps_div");
+    minTempC.classList.add("forecast_minTemp");
+    maxTempC.classList.add("forecast_maxTemp");
+    minTempF.classList.add("forecast_minTemp");
+    maxTempF.classList.add("forecast_maxTemp");
     minTempC.classList.add("metric");
     maxTempC.classList.add("metric");
     minTempF.classList.add("imperial");
     maxTempF.classList.add("imperial");
+    minTempF.classList.add("hidden");
+    maxTempF.classList.add("hidden");
 
     dayDiv.appendChild(weekDay);
+    dayDiv.appendChild(tempsDiv);
+    tempsDiv.appendChild(maxTempC);
+    tempsDiv.appendChild(maxTempF);
+    tempsDiv.appendChild(minTempC);
+    tempsDiv.appendChild(minTempF);
     dayDiv.appendChild(conditionIcon);
     dayDiv.appendChild(condition);
-    dayDiv.appendChild(minTempC);
-    dayDiv.appendChild(minTempF);
-    dayDiv.appendChild(maxTempC);
-    dayDiv.appendChild(maxTempF);
     forecast.appendChild(dayDiv);
   }
 }
