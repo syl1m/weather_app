@@ -5,9 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/1e9d73a6d1.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="current-weather"></div>
+    <div class="current-weather">
+      <div class="currentDataDiv">
+        <div class="left">
+          <div class="location"></div>
+          <div class="lastUpdated"></div>
+          <div class="currentTempC metric"></div>
+          <div class="currentTempF imperial hidden"></div>
+          <div class="conditionIconAndText">
+            <div class="condition"></div>
+            <img class="conditionIcon"></img>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right_data_div">
+            <i class="fa-solid fa-temperature-half fa-2xl"></i>
+            <div class="caption_data">
+              <div class="caption">Feels Like</div>
+              <div class="feelsLikeC metric"></div>
+              <div class="feelsLikeF imperial hidden"></div>
+            </div>
+          </div>
+          <div class="right_data_div">
+            <i class="fa-solid fa-droplet fa-2xl"></i>
+            <div class="caption_data">
+              <div class="caption">Humidity</div>
+              <div class="humidity"></div>
+            </div>
+          </div>
+          <div class="right_data_div">
+            <i class="fa-solid fa-cloud-moon-rain fa-2xl"></i>
+            <div class="caption_data">
+              <div class="caption">Chance of Rain</div>
+              <div class="rainChance"></div>
+            </div>
+          </div>
+          <div class="right_data_div">
+            <i class="fa-solid fa-wind fa-fade fa-2xl"></i>
+            <div class="caption_data">
+              <div class="caption">Wind Speed</div>
+              <div class="windSpeedKph metric"></div>
+              <div class="windSpeedMph imperial hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="location-search">
       <form action="">
         <label for="searchBox"></label>
