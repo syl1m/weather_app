@@ -1,5 +1,4 @@
 :root {
-  --black: #121212;
   --white: #f5f5f5;
 }
 
@@ -39,6 +38,21 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 5rem;
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.9, 0.9);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Left side of Current weather section */

@@ -82,7 +82,18 @@ function createForecastDataUI(data) {
   }
 }
 
+function addFadeInAnimation() {
+  const animatedDivs = document.querySelectorAll(".fade-in");
+  animatedDivs.forEach((div) => {
+    div.classList.remove("fade-in");
+    // eslint-disable-next-line no-void
+    void div.offsetWidth; // Triggers a DOM reflow to restart the fade in CSS animation
+    div.classList.add("fade-in");
+  });
+}
+
 export default function displayData(data) {
   createCurrentDataUI(data);
   createForecastDataUI(data);
+  addFadeInAnimation();
 }
