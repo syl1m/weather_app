@@ -1,4 +1,15 @@
 /* eslint-disable no-plusplus */
+function checkUnits(minTempC, maxTempC, minTempF, maxTempF) {
+  const checkboxInput = document.getElementById("unitMode_checkbox");
+  if (checkboxInput.checked) {
+    minTempC.classList.add("hidden");
+    maxTempC.classList.add("hidden");
+  } else {
+    minTempF.classList.add("hidden");
+    maxTempF.classList.add("hidden");
+  }
+}
+
 function createCurrentDataUI(data) {
   //  Left side data
   const location = document.querySelector(".location");
@@ -8,7 +19,12 @@ function createCurrentDataUI(data) {
   const conditionIcon = document.querySelector(".conditionIcon");
   const condition = document.querySelector(".condition");
 
-  location.textContent = `${data.locationData.name}`;
+  if (data.locationData.country === "United States of America") {
+    location.textContent = `${data.locationData.name}, ${data.locationData.region}`;
+  } else {
+    location.textContent = `${data.locationData.name}, ${data.locationData.country}`;
+  }
+
   lastUpdated.textContent = `Last Updated: ${data.currentData.last_updated_date_formatted}`;
   currentTempC.textContent = `${data.currentData.temp_c} °C`;
   currentTempF.textContent = `${data.currentData.temp_f} °F`;
@@ -67,8 +83,8 @@ function createForecastDataUI(data) {
     maxTempC.classList.add("metric");
     minTempF.classList.add("imperial");
     maxTempF.classList.add("imperial");
-    minTempF.classList.add("hidden");
-    maxTempF.classList.add("hidden");
+
+    checkUnits(minTempC, maxTempC, minTempF, maxTempF);
 
     dayDiv.appendChild(weekDay);
     dayDiv.appendChild(tempsDiv);
