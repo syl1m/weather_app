@@ -1,53 +1,27 @@
 /* eslint-disable no-plusplus */
 function createCurrentDataUI(data) {
-  // Create basic layout divs
-  const currentWeatherDiv = document.querySelector(".current-weather");
-  currentWeatherDiv.textContent = "";
-
-  const dataDiv = document.createElement("div");
-  const leftDiv = document.createElement("div");
-  const rightDiv = document.createElement("div");
-
-  dataDiv.classList.add("currentDataDiv");
-  leftDiv.classList.add("left");
-  rightDiv.classList.add("right");
-
-  dataDiv.appendChild(leftDiv);
-  dataDiv.appendChild(rightDiv);
-  currentWeatherDiv.appendChild(dataDiv);
-
   //  Left side data
-  const condition = document.createElement("div");
-  const location = document.createElement("div");
-  const lastUpdated = document.createElement("div");
-  const currentTempC = document.createElement("div");
-  const currentTempF = document.createElement("div");
-  const conditionIcon = document.createElement("img");
+  const location = document.querySelector(".location");
+  const lastUpdated = document.querySelector(".lastUpdated");
+  const currentTempC = document.querySelector(".currentTempC");
+  const currentTempF = document.querySelector(".currentTempF");
+  const conditionIcon = document.querySelector(".conditionIcon");
+  const condition = document.querySelector(".condition");
 
-  condition.textContent = `${data.currentData.condition.text}`;
-  location.textContent = `${data.locationData.name}, ${data.locationData.region}, ${data.locationData.country}`;
-  lastUpdated.textContent = `${data.currentData.last_updated_date_formatted}`;
+  location.textContent = `${data.locationData.name}`;
+  lastUpdated.textContent = `Last Updated: ${data.currentData.last_updated_date_formatted}`;
   currentTempC.textContent = `${data.currentData.temp_c} °C`;
   currentTempF.textContent = `${data.currentData.temp_f} °F`;
   conditionIcon.src = `https:${data.currentData.condition.icon}`;
-
-  currentTempC.classList.add("metric");
-  currentTempF.classList.add("imperial");
-
-  leftDiv.appendChild(condition);
-  leftDiv.appendChild(location);
-  leftDiv.appendChild(lastUpdated);
-  leftDiv.appendChild(currentTempC);
-  leftDiv.appendChild(currentTempF);
-  leftDiv.appendChild(conditionIcon);
+  condition.textContent = `${data.currentData.condition.text}`;
 
   //  Right side data
-  const feelsLikeC = document.createElement("div");
-  const feelsLikeF = document.createElement("div");
-  const humidity = document.createElement("div");
-  const rainChance = document.createElement("div");
-  const windSpeedKph = document.createElement("div");
-  const windSpeedMph = document.createElement("div");
+  const feelsLikeC = document.querySelector(".feelsLikeC");
+  const feelsLikeF = document.querySelector(".feelsLikeF");
+  const humidity = document.querySelector(".humidity");
+  const rainChance = document.querySelector(".rainChance");
+  const windSpeedKph = document.querySelector(".windSpeedKph");
+  const windSpeedMph = document.querySelector(".windSpeedMph");
 
   feelsLikeC.textContent = `${data.currentData.feelslike_c} °C`;
   feelsLikeF.textContent = `${data.currentData.feelslike_f} °F`;
@@ -55,18 +29,6 @@ function createCurrentDataUI(data) {
   rainChance.textContent = `${data.dailyForecastData[0].rainChance} %`;
   windSpeedKph.textContent = `${data.currentData.wind_kph} kph`;
   windSpeedMph.textContent = `${data.currentData.wind_mph} mph`;
-
-  feelsLikeC.classList.add("metric");
-  feelsLikeF.classList.add("imperial");
-  windSpeedKph.classList.add("metric");
-  windSpeedMph.classList.add("imperial");
-
-  rightDiv.appendChild(feelsLikeC);
-  rightDiv.appendChild(feelsLikeF);
-  rightDiv.appendChild(humidity);
-  rightDiv.appendChild(rainChance);
-  rightDiv.appendChild(windSpeedKph);
-  rightDiv.appendChild(windSpeedMph);
 }
 
 function createForecastDataUI(data) {

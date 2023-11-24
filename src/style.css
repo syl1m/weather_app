@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
 }
 
+/* Current weather data section */
 .currentDataDiv,
 .forecastDiv {
   color: var(--white);
@@ -38,6 +39,72 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 5rem;
+}
+
+/* Left side of Current weather section */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.location {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.lastUpdated {
+  font-size: 0.9rem;
+}
+
+.currentTempC,
+.currentTempF {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.conditionIconAndText {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.condition {
+  font-size: 1.5rem;
+}
+
+/* Right side of Current weather section */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right_data_div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.right_data_div i {
+  width: 30px;
+  color: rgb(27, 124, 165, 0.8);
+}
+
+.caption_data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.caption_data div {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.caption_data .caption {
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 /* Forecast section */
