@@ -256,13 +256,7 @@ body {
   transform: scale(1.2);
 }
 
-.errorMsgContainer {
-  position: relative;
-}
-
 .errorMsg {
   color: var(--white);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
+  font-weight: 500;
 }
