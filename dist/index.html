@@ -55,11 +55,16 @@
       </div>
     </div>
     <div class="location-search">
-      <form action="">
-        <label for="searchBox"></label>
-        <input type="text" name="searchBox" id="searchBox" />
-        <button type="submit" id="searchBtn">Search</button>
-      </form>
+      <div class="errorMsgContainer">
+        <div class="errorMsg"></div>
+      </div>
+      <div class="searchQueryForm">
+        <form action="">
+          <label for="searchBox"></label>
+          <input type="text" name="searchBox" id="searchBox" class="searchBox" placeholder="Search a location"/>
+          <button type="submit" id="searchBtn" class="searchBtn"></button>
+        </form>
+      </div>
     </div>
     <div class="future-weather">
       <div class="forecastDiv fade-in"></div>

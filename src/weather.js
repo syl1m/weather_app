@@ -20,7 +20,7 @@ function getCurrentData(data) {
   const last_updated_date = parse(last_updated, "yyyy-MM-dd HH:mm", new Date());
   const last_updated_date_formatted = format(
     last_updated_date,
-    "EEE MMM d, yyyy h:mm aa"
+    "EEE MMM d, yyyy | h:mm aa"
   );
   return {
     last_updated_date_formatted,
