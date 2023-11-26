@@ -34,6 +34,7 @@ searchBtn.addEventListener("click", async (e) => {
 
   const searchInputValue = searchInput.value.trim();
   if (!searchInputValue) {
+    searchQueryForm.reset();
     return;
   }
 
@@ -41,10 +42,9 @@ searchBtn.addEventListener("click", async (e) => {
   const weather = await getWeatherData(searchInputValue);
   if (weather) {
     displayData(weather);
-    errorMsg.classList.add("hidden");
+    errorMsg.textContent = "Search location";
   } else {
     errorMsg.textContent = `${searchInputValue} is not a valid location.`;
-    errorMsg.classList.remove("hidden");
   }
   searchQueryForm.reset();
 });
