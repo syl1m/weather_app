@@ -3,6 +3,7 @@ import getWeatherData from "./weather";
 import displayData from "./displayData";
 import createUnitsToggle from "./unitsToggle";
 import "./unitsToggle.css";
+import getCurrentLocation from "./getCurrentLocation";
 
 // Create and display a units toggle in DOM
 (function createUnitsToggleInDOM() {
@@ -12,10 +13,16 @@ import "./unitsToggle.css";
   locationSearchDiv.appendChild(toggleWrapper);
 })();
 
-// Set location to Seattle for weather data on initial page load
+// Display weather data for user's current location on initial page load
 (async () => {
-  const weather = await getWeatherData("Seattle");
-  displayData(weather);
+  try {
+    const currentLocation = await getCurrentLocation();
+    const weather = await getWeatherData(currentLocation);
+    displayData(weather);
+  } catch (err) {
+    const locationDiv = document.querySelector(".location");
+    locationDiv.textContent = `${err}`;
+  }
 })();
 
 // Update weather data with new location from search query
