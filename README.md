@@ -4,13 +4,13 @@
 
 # About the Project
 
-A Weather app created using vanilla JavaScript and APIs (fetch and geolocation). Users can search cities worldwide and get current and forecast weather features.
+A Weather app created using vanilla JavaScript and APIs (fetch and geolocation). Users can search locations worldwide and get current and forecast weather features.
 
 ## Features
 
-- Search cities worldwide
-- Set initial location on page load to user's current location
-- Display current temperature of the searched city
+- Search locations worldwide by name, zipcode, latitude and longitude coordinates
+- Set default location on page load to user's current location
+- Display current temperature of the searched location
 - Display current feels like temperature, humidity, chance of rain, and wind speed
 - Display last updated local date and time of the searched location
 - Toggle seamlessly between imperial and metric units
