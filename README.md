@@ -15,7 +15,7 @@ A Weather app created using vanilla JavaScript and APIs (fetch and geolocation).
 - Display last updated local date and time of the searched location
 - Toggle seamlessly between imperial and metric units
 - Provide 3 day forecast weather data
-- Display error message if searched city could not be found
+- Display error message if searched location could not be found
 
 # Technologies Used
 
